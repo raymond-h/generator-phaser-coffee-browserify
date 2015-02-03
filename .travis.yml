@@ -1,0 +1,7 @@
+language: node_js
+node_js:
+  - '0.10'
+before_install:
+  - currentfolder=${PWD##*/}
+  - if [ "$currentfolder" != 'generator-phaser-coffee-browserify' ]; then cd .. && eval "mv $currentfolder generator-phaser-coffee-browserify" && cd generator-phaser-coffee-browserify; fi
+
