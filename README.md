@@ -2,6 +2,7 @@
 
 > [Yeoman](http://yeoman.io) generator
 
+Simple generator for getting a Phaser project using CoffeeScript and Browserify going, based on my own preferences.
 
 ## Getting Started
 
