@@ -12,10 +12,14 @@ module.exports = (grunt) ->
 
 					browserifyOptions:
 						extensions: ['.coffee', '.js', '.json']
-						noParse: [require.resolve 'phaser/dist/phaser']
 
 				files:
 					'public/lib/index.js': ['src/index.coffee']
+
+		copy:
+			phaser:
+				files:
+					'public/lib/phaser.js': require.resolve 'phaser'
 
 		coffeelint:
 			build:
@@ -42,6 +46,7 @@ module.exports = (grunt) ->
 	grunt.registerTask 'default', ['lint', 'build']
 
 	grunt.registerTask 'build', [
+		'copy:phaser'
 		'browserify:build'
 	]
 
